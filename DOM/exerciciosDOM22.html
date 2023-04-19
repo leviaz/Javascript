@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        
+        
+
+        <style>
+           
+        </style>
+        <title>Exercicio 21</title>
+        
+    </head>
+    <body>
+        <label> Advinhe o número:</label>
+        <input type="text" id="num" />
+        <button id="js"> AdvinharJS </button>
+        <button id="jq"> AdvinharJQ </button>
+        <p id="texto"> </p>
+            
+        </div>
+        
+
+        <script>
+           function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+            }
+            let numr = getRndInteger(0,10)
+            console.log(numr)
+            
+
+            const inp = document.querySelector("input")
+            const js = document.querySelector("button[id=js]")
+            js.addEventListener("click",()=>{
+                
+                let num = parseInt(inp.value)
+                if(num==numr){
+                    alert("Certo!")
+
+                }else{
+                    alert("Errado!")
+                }
+            })
+
+
+            //jq
+            $("#jq").click(()=>{
+                let num = parseInt($("#num").val())
+                if(num==numr){
+                    alert("Certo!")
+
+                }else{
+                    alert("Errado!")
+                }
+            })
+        </script>
+
+    </body>
+</html>
