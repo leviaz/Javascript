@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 17</title>
+        <style>
+            input{
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+      <form>
+        <label>Soma de 2 números </label><br>
+        <input type="number" name="soma1" placeholder="Digite um número"/>
+        <input type="number" name="soma2" placeholder="Digite outro número"/> <br>
+        <button>Somar</button> <br>
+        <input type="number" name="res"/>
+      </form>
+
+          
+          
+      <script>
+        const s1= document.querySelector("input[name=soma1]")
+        const s2= document.querySelector("input[name=soma2]")
+        const res =document.querySelector("input[name=res]")
+        const button = document.querySelector("button")
+        button.addEventListener("click",(event)=>{
+                event.preventDefault()
+                if(s1.value != null && s2.value!= null){
+                    res.value=parseInt(s1.value)+parseInt(s2.value)
+                    res.innerHTML=res.value
+                }
+        })
+       
+      </script>
+            
+    </body>
+</html>

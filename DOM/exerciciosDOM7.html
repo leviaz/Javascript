@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Change the content of a cell</title>
+        <style type="text/css">
+            body {margin: 30px;}
+        </style>  
+    </head>
+    
+    <body>
+    <table id="myTable" border="1">
+    </table>
+    <form>
+        <input type="number" name="row" placeholder="rows"/>
+        <input type="number" name="column" placeholder="columns"/>
+        <input type="button" value="Create the table">
+    </form>
+
+        <script>
+            const table = document.querySelector("table")
+            const button = document.querySelector("input[type=button]")
+            const rows = document.querySelector("input[name=row]")
+            const columns = document.querySelector("input[name=column]")
+
+            button.addEventListener("click",()=>{
+                for(let i=0;i<=rows.value;i++){
+                    row=table.insertRow()
+                    for(let j=columns.value;j>-1;j--){
+                        var cell1 = row.insertCell(0)
+                        cell1.innerHTML = `Row${i} column${j}`
+                    }
+                }
+                    
+
+            })
+        </script>
+
+    </body>
+</html>

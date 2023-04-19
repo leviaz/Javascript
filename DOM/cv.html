@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Curriculum</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <img src="perfil.png" width="200">
+        <h1 id="person-name" class="title"> Seu Nome</h1>
+        <h2> Programador JavaScript</h2>
+        <p class="title"> Conhecimento em programação Frontend, Backend para desenvolvimento de sistemas Fullstack.</p>
+        <p>Para mais detalhe, por favor visite <a href="https://www.w3schools.com"> Web </a> e <a href="https://class.devsamurai.com.br/lectures/1065"> Web2 </a></p>
+
+        <script>
+        // Hierarquia do DOM
+        // Document --> Nodes --> Elements --> Attributes
+
+        console.log(document)
+        console.log(document.body)
+        //console.log(document.body.h1) //não funciona, tem que usar get
+
+        // acessando os nodes do DOM por ID
+        const titleE1 = document.getElementById("person-name") //captura pelo ID
+        console.log("TitleE1", titleE1)
+        
+        // acessando os nodes do DOM por NOME DE TAG
+        const titleE2 = document.getElementsByTagName("h1")
+        console.log("TitleE2", titleE2)
+
+        // acessando os nodes do DOM por NOME DE CLASSE (CLASS)
+        const titleE3 = document.getElementsByClassName("title")
+        console.log("TitleE3", titleE3)
+       
+        //iterando e capturando os elementos que possuem a class title
+       for(const el of titleE3){
+        console.log("el",el)
+       }
+
+       //recuperando da forma moderna
+       //select all
+       console.log("*",document.querySelectorAll("*")) //seletor universal CSS
+
+       //seletor de id
+       console.log("id",document.querySelector("#person-name"))
+
+       //seletor de tag
+       console.log("tag",document.querySelectorAll("p")) //all seleciona todos os p
+
+       //seletor de class
+       console.log("class",document.querySelectorAll(".title"))
+
+       //seletor de atributos
+       console.log("attr",document.querySelectorAll("a[href]"))
+
+
+       //alterando dados de elementos do DOM
+       const elemento=document.querySelector("#person-name")
+       console.log("value:" , elemento.innerHTML) //retorna o valor
+       elemento.innerHTML= "Levi Azevedo" //InnerHTML altera o valor por meio do script sem mexer no html
+       elemento.style.color = "red" //altera o estilo css 
+        </script>
+    </body>
+
+    
+
+   
+</html>

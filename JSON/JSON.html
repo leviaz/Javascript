@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>JSON</title>
+        
+    </head>
+    <body>
+       
+        <script>
+            //json transfere os dados object em forma de string (stringfy) e será enviado para o servidor ou linguagem (parse)
+
+            const person ={
+                name:"Levi",
+                age:24,
+                adress : {
+                    street: "rua 3",
+                    numer:"811",
+                    complement:"",
+                    district:"Jardim",
+                    city:"Fortaleza",
+                    state:"Ceará"
+                }
+            }
+
+            const personStr=JSON.stringify(person) //transforma em string em array
+            //JSON.parse(person)
+
+            const personObj = JSON.parse(personStr) //converte de volta a objeto, permitindo assim a transmissão de um objeto do js para o servidor que pode ser de qualquer linguagem
+            console.log(typeof personStr)
+            console.log(personStr)
+
+            console.log(typeof personObj)
+            console.log(personObj)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <meta charset="UTF-8" />
+    <script>
+        let values = [1.5,2,4,10]
+        // Simula map e filter alterando o array
+        //acumulador será o inicio padrão em reduce
+
+        function callback (Accumulator, CurrentValue, index, array){
+            console.log("Acumulador:",Accumulator)
+            console.log("Valor atual:",CurrentValue)
+            console.log("Index:",index)
+            console.log("Array", array)
+            console.log("---")
+            return Accumulator+1 //incrementa a iteração
+        }
+
+        values.reduce(callback)
+
+        //reduce para somatória
+        let sum = values.reduce((total, item ) => total + item, 0)
+        console.log("soma = ", sum)
+
+        let avg = values.reduce((total, item, index)=> total+item/(index+1))
+        console.log("Média = ",avg)
+
+        let double =values.reduce((total,item) => total.concat(item*2),[])
+        console.log("double", double)
+
+        let newValues = values.reduce((total,item) => 
+        { 
+            if (item>2){
+            total.push(item)}
+            return total
+        }, [])
+        console.log(newValues) 
+        
+    </script>
+</html>

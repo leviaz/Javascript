@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Dados dinamicos e eventos</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+
+        <input type="text" placeholder="nome" id="nome"/>
+        <input type="number" placeholder="idade" id="idade"/>
+        <input type="email" placeholder="email" id="email"/>
+        <button> enviar </button>
+
+       <script>
+            const nome = document.querySelector("#nome")
+            //console.log(nome.value)
+
+            const idade = document.querySelector("#idade")
+            //console.log(idade.value)
+
+            const email = document.querySelector("#email")
+            //console.log(email.value)
+            email.addEventListener("keydown", (event)=>{
+                //console.log("ok")
+                if(event.keyCode ===13){
+                alert(`
+                Nome ${nome.value}
+                Idade ${idade.value}
+                Email ${email.value}
+                `)
+            }  
+
+            })
+            const button = document.querySelector("button")
+            button.addEventListener("click", ()=>{
+            console.log("clicou no botão")
+            alert(`
+            Nome ${nome.value}
+            Idade ${idade.value}
+            Email ${email.value}
+            `)
+           })
+       </script>
+    </body>
+</html>  

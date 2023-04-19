@@ -1,0 +1,46 @@
+<html>
+    <script>
+
+        let N = [0, 1]
+        let calc =true 
+        let i = 0
+        let verif = "S"
+        while (calc==true){
+            N[i] = parseInt(prompt("insira um número"))
+            i++
+            verif = String(prompt("Deseja inserir mais um número no conjunto(S/N)?"))
+            while (verif !="S" && verif != "N"){
+                verif = (String(prompt("Entrada inválida, tente novament(S/N):")))
+            }
+            if (verif=="N"){
+                calc=false
+            }else{
+                calc=true
+            }
+           
+        }
+        //console.log(i)
+        let soma = 0
+        let maior =N[0]
+        let menor =N[0]
+        let j=0
+        while(j!=i){
+            if (N[j]>maior){
+                maior=N[j]
+                
+            }
+
+            if(N[j]<menor){
+                menor=N[j]
+            }
+            soma =soma+N[j]
+            j++
+        }
+        console.log(`Maior: ${maior}`)
+        console.log(`Menor: ${menor}`)
+        console.log(`Soma: ${soma}`)
+
+
+
+    </script>
+</html>

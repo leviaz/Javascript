@@ -1,0 +1,22 @@
+<html>
+    <meta charset="UTF-8" />
+    <script>
+        const numbers = [1,2,3,4,5]
+
+        const double = numbers.map(n=> n*2)
+        console.log(double)
+
+        //conversão de temperatura com map
+        const temp = [0, 32,45,46,47,91,93,121]
+        const celcius = temp.map(t => Math.round(((t-32)*5)/9))
+        console.log(celcius)
+
+
+        const people = [{ name: "felipe", age:40},
+        { name: "aManda", age:14},
+        { name: "Davi", age:9},
+        ]
+        const peopleNormalizado = people.map((p) => p.name.toUpperCase())
+        console.log(peopleNormalizado)
+    </script>
+</html>

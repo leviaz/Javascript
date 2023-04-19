@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 16</title>
+        
+    </head>
+    <body>
+      
+        <img src="https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true" alt="lamp">
+        
+        <script>
+           const lampada = document.querySelector("img[alt=lamp]")
+           lampada.addEventListener("mouseover",(event)=>{
+           
+            lampada.setAttribute("src","https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada-on.jpg?raw=true")
+            event.preventDefault()  
+            })
+           lampada.addEventListener("mouseout",(event)=>{
+                lampada.setAttribute("src","https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true")
+                event.preventDefault()
+           })
+            
+            
+               
+                
+                
+           
+
+          
+          
+
+            
+        </script>
+    </body>
+</html>

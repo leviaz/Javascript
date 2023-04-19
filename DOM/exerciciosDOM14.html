@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 14</title>
+        
+    </head>
+    <body>
+        <form>
+            <input type="text" name="palavra"> <br>
+        </form>
+        <button onclick="tamanho(palavra)">Verificar o tamanho</button>
+        <script>
+            const palavra = document.querySelector("input[name=palavra]")
+           tamanho=(palavra) => {
+            let tamanho = palavra.value
+            console.log(` '${tamanho}' // ${tamanho.length}`)
+
+           }
+            
+        </script>
+    </body>
+</html>

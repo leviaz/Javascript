@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>AJAX</title>
+        
+    </head>
+    <body>
+       <button onclick ="loadData()"> Recuperar Dados </button>
+       <br>
+       <br>
+        <script>
+           //chamada de dados assincronos em um servidor
+           //JS+XML conexão entre navegador e servidor sem sair da página
+            //onclick funciona como o query selector e addeventlistener
+
+           const loadData = () =>{
+            const xhr = new XMLHttpRequest() //instancia classe que faz chamadas remotas
+            
+            xhr.open("GET","https://api.github.com/users/felipefontoura" ) //open com metodo deseja e o endereço REQUISIÇÃO
+            xhr.send(null) //realiza o envio de informações para o servidor
+            xhr.onreadystatechange = () => { //quando o estado da requisição terminar irá evocar o callback
+                if (xhr.readyState === 4){ //verifica o estado
+                    const res = JSON.parse(xhr.responseText)
+                    console.log(res) //retorna em JSON  string
+                    console.log(res.blogUrl)
+
+                    const name = res.name
+                    const avatar = res.avatar_url
+                    const followers = res.followers
+                    const blogUrl = res.html_url
+
+                    //cria o titulo em html pelo DOM
+                    const nameSITE= document.createElement('h2')
+                    nameSITE.innerHTML=name
+                    document.body.appendChild(nameSITE) //anexa os elementos criados a página
+
+                    //cria imagem de perfil
+                    const avatarSITE= document.createElement('img')
+                    avatarSITE.setAttribute("src",avatar)
+                    avatarSITE.setAttribute("width","128")
+                    document.body.appendChild(avatarSITE)
+
+                    //cria numero de followers
+                    const followersSITE= document.createElement('p')
+                    followersSITE.innerHTML=`Número de seguidores: ${followers}`
+                    document.body.appendChild(followersSITE)
+
+                    const blogURLSITE= document.createElement('a')
+                    blogURLSITE.innerHTML=`Visite a página`
+                    blogURLSITE.setAttribute("href",blogUrl)
+                    document.body.appendChild(blogURLSITE)
+
+                    
+
+                   
+
+                }
+            }
+           }
+           
+
+        </script>
+    </body>
+</html>

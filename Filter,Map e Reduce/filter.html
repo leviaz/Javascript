@@ -1,0 +1,42 @@
+<html>
+  <meta charset="UTF-8" />
+  <script>
+    const numbers = [10,18,1,15]
+    let res = []
+    //filtrar por meio do for 
+    for(const n of numbers){
+      if(n>10){
+        //console.log(n)
+        res.push(n)
+      }
+    }
+
+    console.log(res)
+    //filtrando com filter
+    
+    //const gt10= function(item){
+      //return item >10 // true ou false
+    
+    //}
+
+    //let result = numbers.filter(function(item){
+      //return item>10
+    //})
+    let result = numbers.filter((n) => n >10) //filter com arrow
+    console.log(result)
+
+
+    const people =[
+      {name: "Felipe", gender:"M" , age:14},
+      {name: "Paulo",  gender:"M" , age:40},
+      {name: "Amanda",  gender:"F" ,age:18},
+    ]
+
+    let resultado = people.filter((p) => p.age>=18) //filter em objetos
+    console.log(resultado)
+
+    //filtrando 2 atributos
+    let alista = people.filter((p) => p.gender ==="M" && p.age>=18)
+    console.log(alista)
+  </script>
+</html>

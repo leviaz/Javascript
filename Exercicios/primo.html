@@ -1,0 +1,25 @@
+<html>
+    <meta charset="UTF-8"/>
+    <script>
+        num = prompt('Digite o número desejado:')
+        var primo = false
+        let num1= 0
+        let i =2
+        while(primo==false || i<10){
+            num1=num/i
+            primo = Number.isInteger(num1)
+            if(primo == true){
+                console.log('Esse número não é primo.')
+            }else{
+                i++
+            }
+        }
+        
+        if (primo==false){
+            console.log('Esse número é primo.')
+        }
+            
+        
+    </script>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let name = "Levi", age=24,
+        adress= {
+            street: "Rua 01",
+            city: "Fortaleza"
+
+        } //agrupamento de definições ou declaração de variáveis com apenas um let
+        
+        console.log ("name", name)
+        console.log ("age", age) 
+        console.log ("adress",adress)
+
+        // "somando strings para fazer uma frase, as palavras em si vem em aspas, as variáveis não, concarenação"
+        console.log (name + " tem "+ age + " anos. ")
+        // "A" + "B" = AB
+
+        //interpolação usa a crase para determinar a frase e basta colocar o simbolo $ entre chaves para que seja interpretado a variável
+        console.log(`${name} tem ${age + 1} anos.`)
+        //interpolação com object
+        console.log(`${name} tem ${age + 1} anos e reside em ${adress.city} na ${adress.street}.`)
+
+        //JSON stringfy transforma o object em string
+        console.log (name + " tem "+ age + " anos e reside em. " + JSON.stringify(adress))
+
+    </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 15</title>
+        
+    </head>
+    <body>
+      
+        <img src="https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true" alt="lamp">
+        
+        <script>
+           const lampada = document.querySelector("img[alt=lamp]")
+           lampada.addEventListener("click",(event)=>{
+            if(lampada.src==="https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true"){
+                lampada.setAttribute("src","https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada-on.jpg?raw=true")
+            }else{
+                lampada.setAttribute("src","https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true")
+            }
+               
+                event.preventDefault()
+                
+           })
+
+          
+          
+
+            
+        </script>
+    </body>
+</html>

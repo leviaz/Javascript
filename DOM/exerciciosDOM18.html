@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 18</title>
+        
+    </head>
+    <body>
+      <form>
+        
+        <button id="verde">Verde</button> 
+        <button id="vermelho">Vermelho</button> 
+        
+      </form>
+
+          
+          
+      <script>
+        const verde = document.querySelector("button[id=verde]")
+        const vermelho = document.querySelector("button[id=vermelho]")
+        const fundo = document.querySelector("body")
+
+        verde.addEventListener("click",(event)=>{
+            fundo.style.background="green"
+            event.preventDefault()
+        })
+
+        vermelho.addEventListener("click",(event)=>{
+            fundo.style.background="red"
+            event.preventDefault()
+        })
+      </script>
+            
+    </body>
+</html>

@@ -1,0 +1,26 @@
+
+        num = prompt('Digite o número desejado:')
+        function reverseString (str){
+            var splitString = str.split("")
+            var invert =[]
+            var j = 0
+            for (i=splitString.length;i>-1;i--){
+                invert[j]=splitString[i]
+                j++
+                //console.log(j)
+            }
+            //console.log(invert)
+            let num1=0
+            j=j-1
+            for (i=1;i<invert.length;i++){
+                j--
+               invert[i]= parseInt(invert[i])
+               //console.log(j)
+                num1=num1+(invert[i]*(Math.pow(10,j)))
+                
+            }
+            console.log(num1)
+        }
+        reverseString(num)
+        
+

@@ -1,0 +1,35 @@
+<html>
+    
+    <meta charset="UTF-8" />
+    <script>
+
+        let people =["Levi", "André", "Paulo", "Jonny","Marcelo"]
+
+        //Retornar elementos específicos do array
+        console.log(people[2])
+        //retornar "Fatias" do array
+        console.log(people.slice(2)) // o parametro determina o inicio
+        console.log(people.slice(1,3)) //inicio e parada
+
+        //adicionar novos elementos (inicio e fim)
+        people.push("Ana")
+        
+        people.unshift("Maria") //adiciona no inicio
+        console.log(people)
+
+
+        //remover elementos do array (inicio e fim)
+        people.pop()//remove do final
+        people.shift() //remove do inicio
+        console.log(people)
+
+        //remover fatias do array
+        people.splice(1,2) //primeiro parametro determina o inicio e o segundo a quantidade
+        console.log(people)
+
+        //localizar elementos no array
+        let index =people.indexOf("Jonny")
+        console.log(index) //retornar o indice do elemento
+       
+    </script>
+</html>

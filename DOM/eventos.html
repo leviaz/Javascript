@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Dados dinamicos e eventos</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <script>
+            //eventos, clique, carregamento da página, abertura de documentos
+            //addEventListener("Nome do evento", função callback)
+            //content load (carregamento)
+
+            const principal = () => {
+                const el1 = document.getElementById("title")
+                 console.log("el1", el1)
+            
+            }
+
+            document.addEventListener("DOMContentLoaded",principal)
+            //quando o elemento for carregado será recuperado pelo get após a evocação da função principal
+        </script>
+        
+        <h1 id="title">
+            Minha página
+        </h1>
+
+        <button>Clique-me</button>
+        <a href="https://class.devsamurai.com.br">Clique-me</a>
+
+        <script>
+            //sempre recuperar o elemento e realizar o listener
+           //evento de clique
+           const button = document.querySelector("button")
+           button.addEventListener("click", ()=>{
+            console.log("clicou no botão")
+           })
+           //detecta os cliques
+           const hyperlink = document.querySelector("a")
+           hyperlink.addEventListener("click", ()=>{
+            event.preventDefault() //previne a ocorrência do evento
+            console.log("clicou no link")
+           })
+           
+        
+        
+
+        </script>
+    </body>
+</html>        

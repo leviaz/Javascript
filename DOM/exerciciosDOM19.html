@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 19</title>
+        
+    </head>
+    <body>
+      <form>
+        
+        <input type="date" placeholder="Insira sua data de nascimento"/>
+     
+        <button> Verificar </button>
+
+      </form>
+
+          
+          
+      <script>
+            const nasc= document.querySelector("input")
+            const date= new Date()
+            const button = document.querySelector("button")
+            button.addEventListener("click",(event)=>{
+                event.preventDefault()
+                let ano = date.getYear()
+                let date2 = JSON.stringify(nasc.value)
+               var part = date2.split('-')
+               var nasc2 = new Date (part[0],part[1],part[2])
+               var ano2 = nasc2.getYear()
+               console.log(nasc2)
+               console.log(ano)
+                
+            })
+            
+      </script>
+            
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset=utf-8 />  
+        <title>Change the content of a cell</title>
+    </head>
+    <body>
+        <table id="myTable" border="1">
+        <tr><td>Row1 cell1</td>
+        <td>Row1 cell2</td></tr>
+        <tr><td>Row2 cell1</td>
+        <td>Row2 cell2</td></tr>
+        <tr><td>Row3 cell1</td>
+        <td>Row3 cell2</td></tr>
+        </table>
+        <form>
+            <input type="number" id="column" placeholder="column"/>
+            <input type="number" id="row" placeholder="row"/>
+            <input type="text" id="content" placeholder="content"/>
+            <input type="button" name="button" value="Change content">
+        </form>
+
+            <script>
+                const column = document.querySelector("#column")
+                const row = document.querySelector("#row")
+                const content = document.querySelector("#content")
+                const table = document.querySelector("#myTable")
+                const button = document.querySelector("input[name=button]")
+                button.addEventListener("click",()=>{
+                   table.rows[row.value].cells[column.value].innerHTML =content.value
+                })
+                
+            </script>
+    </body>
+</html>
+

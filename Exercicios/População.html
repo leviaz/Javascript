@@ -1,0 +1,48 @@
+<html>
+    <meta charset="UTF-8"/>
+    <script>
+        let calc =true 
+        while(calc==true){
+            let PaisA = 0
+            let PaisB = 0
+            let i = 0
+            let jogar = "S"
+            PaisA=parseInt(prompt("Informe a população do País A:"))
+            PaisB=parseInt(prompt("Informe a população do País B:"))
+            if (PaisB > PaisA){
+                while (PaisA<PaisB){
+                PaisA=PaisA+(PaisA*0.03)
+                PaisB=PaisB+(PaisB*0.015)
+                console.log(PaisA)
+                console.log(PaisB)
+                i++
+            }
+            console.log(`irá levar ${i} anos para que a população do País A ultrapasse a do País B`)
+               
+            }else if (PaisA>PaisB){
+                while (PaisB<PaisA){
+                PaisA=PaisA+(PaisA*0.015)
+                PaisB=PaisB+(PaisB*0.03)
+                console.log(PaisA)
+                console.log(PaisB)
+                i++
+            }
+            console.log(`irá levar ${i} anos para que a população do País B ultrapasse a do País A`)
+            }else {
+                console.log("As populações já são iguais")
+            }
+            
+            jogar = prompt("Deseja calcular novamente?(S/N)")
+            while (jogar !== "S" && jogar !== "N"){
+                jogar=prompt("Entrada inválida, tente novamente (S/N)")
+            }
+            if(jogar=="S"){
+                calc=true;
+            }else{
+                calc=false
+            }
+        }
+        
+
+    </script>
+</html>

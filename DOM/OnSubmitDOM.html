@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset=utf-8 />
+            <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+        </head>
+    <body>
+        
+        <form action="https://www.google.com.br/search" method="get"> 
+           <label for="q"> Busca </label>  
+           <input type="text" name="q" />
+        <input type="submit" value="pesquisar"/>
+       </form>
+       
+       <script>
+            //action faz uma requisição a um server com o método determinado
+            const form = document.querySelector("form")
+            form.addEventListener("submit", (event) => {
+
+                const queryValue = event.target.querySelector("input[name=q]").value //validar se o campo não está vazio
+                //event.preventDefault()
+                console.log("submit", event)
+                console.log("query:" + queryValue)
+                if(!queryValue){
+                    event.preventDefault()
+                    alert("Campo busca é obrigatório")
+                }
+            })
+       </script>
+
+    </body>
+</html>

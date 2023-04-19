@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset=utf-8 />
+        <title>JS DOM paragraph style</title>
+    </head> 
+    <body>
+        <p id ='text'>JavaScript Exercises - w3resource</p> 
+    <div>
+        <button id="jsstyle"
+        onclick="js_style()">Style</button>
+
+    </div>
+        <script>
+            
+            const p = document.querySelector("p")
+            const button = document.querySelector("button")
+            button.addEventListener("click",()=>{
+                p.style.color= "blue";
+                p.style.fontSize="2em"
+                p.style.fontFamily="Papyrus"
+            })
+        </script>
+    </body>
+</html>

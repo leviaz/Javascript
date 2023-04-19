@@ -1,0 +1,35 @@
+<html>
+    <script>
+        const person = {
+            nome: 0,
+            idade:0,
+            salario:0,
+            sexo:"0",
+            estadoCivil:0
+
+        }
+        person.nome=prompt("Digite seu nome:  (Nome deve conter mais de 3 caracteres)")
+        while (person.nome.length<3){
+            person.nome=prompt("Por favor digite novamente seu nome:")
+        }
+        person.idade=prompt("Digite sua idade: (Idade deve ser entre 0 e 150 anos)" )
+        while (person.idade<0 || person.idade >150){
+            person.idade=prompt("Por favor digite novamente sua idade:")
+        }
+        person.salario=prompt("Digite seu salário:")
+        while (person.salario<0){
+            person.salario=prompt("Por favor digite novamente seu salario:")
+        }
+
+        person.sexo=String(prompt("Digite seu sexo(f/m):"))
+        while (person.sexo !== "f" && person.sexo !== "m" ){
+            person.sexo=String(prompt("Por favor digite novamente seu sexo:"))
+        }
+
+        person.estadoCivil=String(prompt("Digite seu Estado civil (s/c/v/d):"))
+        while (person.estadoCivil !== "s" && person.estadoCivil !== "c" && person.estadoCivil !== "v" && person.estadoCivil !== "d"){
+            person.estadoCivil=String(prompt("Por favor digite novamente seu estado civil:"))
+        }
+
+    </script>
+</html>

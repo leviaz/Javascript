@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <style type="text/css">
+            body {margin: 30px;}
+            input {
+                margin-top:10px;
+            }
+            button {
+                margin-top: 10px;
+            }
+            
+        </style>   
+        <title>Calculate a radius</title>
+        
+    </head>
+    <body>
+        <form>
+            <p>Input radius value and get the volume of a sphere</p>
+            <label for="radius" id="radius">Radius</label><br>
+            <input type="number" name="radius" /><br>
+            <label for="volume" id="volume">Volume</label><br>
+            <input type="volume" name="volume" value="0.000" />  <br>
+            <button> Calculate </button>
+
+        </form>
+
+        <script>
+            const radius = document.querySelector("input[name=radius]")
+            const volume = document.querySelector("input[name=volume]")
+            const button = document.querySelector("button")
+
+            button.addEventListener("click",(event)=>{
+                volume.value=((((radius.value)*(radius.value)*(radius.value))*4*3.14))/3
+                volume.innerHTML=volume.value
+                event.preventDefault()
+            })
+        </script>
+    </body>
+</html>

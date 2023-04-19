@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 /> 
+        <title>Exercicio 19</title>
+        
+    </head>
+    <body>
+      <form>
+        
+        <input type="number" placeholder="Insira o preço" name=preco/>
+      
+        <button> Verificar </button>
+        <input type="text" id="final" value="0.000"/>
+      </form>
+
+          
+          
+      <script>
+            const preco = document.querySelector("input")
+            const button = document.querySelector("button")
+            const final = document.querySelector("input[id=final]")
+            button.addEventListener("click",(event)=>{
+                event.preventDefault()
+                //console.log(preco.value)
+                let desconto=(parseFloat(preco.value)*5)/100
+                //console.log(desconto)
+                final.value=`desconto de R$: ${desconto}`
+                final.innerHTML=final.value
+                //inputs não recebem valores diretamente, é preciso usar value
+
+            })
+      </script>
+            
+    </body>
+</html>

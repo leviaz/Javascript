@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+       
+        <title>Promises</title>
+        
+    </head>
+    <body>
+        <button> Executar</button>
+       
+        <script>
+            //promisse é um objeto usado para processamento assincrono. Uma promise representa um valor que pode está disponível agora, no futuro ou nunca
+            //estados:
+            //pending(inicial)
+            //fulfilled(realizada)
+            //rejected(rejeitada)
+
+            let count = 0 
+            function testPromise(){
+                console.log("sync started")
+                const promiseCount = ++count
+                const p1 = new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                    //console.log("asynch timer") //ocorre de forma assincrona
+                     // resolve irá evocar o then que irá emitir o valor no console
+                    //resolve pode passar valores
+                    if(promiseCount%2==0){
+                        resolve(promiseCount) 
+                    }else{
+                        reject(promiseCount)
+                    }
+                    },3000) // em ms logo 3 s, timeout recebe uma função como parametro
+                }).then((value)=>{
+                console.log(`promise finished ${value}`)
+               }).catch(()=>{ //catch pega erros, transmite  error quando o reject() é evocado 
+                    console.error("async error")
+               }) //then irá retornar quando a função terminar o promise
+               //isso demonstra uma via paralela por conta do tempo, enqunto o start e finish executam na hora
+               // o async ocorre depois mesmo após vários clicks
+                console.log("sync finished")
+            }
+            const button = document.querySelector("button")
+            button.addEventListener("click",testPromise)
+
+            // no evento colocar a função que irá evocar promise
+            // na função inicializar o object new promise e utilizar o setTimeout
+            // setar condições e aplicar abaixo o then (resolve) e o catch (reject), respectivamente cada uma das funções irão evocar o then e o catch que irão emitir a resposta 
+
+        </script>
+    </body>
+</html>

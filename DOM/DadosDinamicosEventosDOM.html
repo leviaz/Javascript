@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Dados dinamicos e eventos</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <img src="perfil.png" width="200">
+        <h1 id="person-name" class="title"> Seu Nome</h1>
+        <h2> Programador JavaScript</h2>
+        <p class="title"> Conhecimento em programação Frontend, Backend para desenvolvimento de sistemas Fullstack.</p>
+        <p>Para mais detalhe, por favor visite <a href="https://www.w3schools.com"> Web </a> e <a href="https://class.devsamurai.com.br/lectures/1065"> Web2 </a></p>
+
+        <script>
+            //incluindo lista e h2 (elementos dinâmicos)
+            //create.element cria elementos a partir de uma tag
+            const subTitle = document.createElement("h2")
+           subTitle.innerHTML="Projetos"
+
+           //anexando o subtitle
+           document.body.append(subTitle)
+
+           //ADICIONANDO lista
+
+           const lista = document.createElement("ul")
+           const l1 = document.createElement("li")
+           l1.innerHTML="Ping Pong"
+
+           const l2 = document.createElement("li")
+           l2.innerHTML="TODO MVC"
+
+           const l3 = document.createElement("li")
+           l3.innerHTML=" Github API"
+
+           const l4 = document.createElement("li")
+           l4.innerHTML="eCommerce"
+
+          
+           
+
+           //anexando os li na ul, é possivel com append colocar tags dentro de tags sendo util para li e ul, links ou h1..
+           lista.append(l1)
+           lista.append(l2)
+           lista.append(l3)
+           lista.append(l4)
+            //anexando o ul
+           document.body.append(lista)
+
+           
+
+
+
+
+
+        </script>
+    </body>
+
+    
+
+   
+</html>

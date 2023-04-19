@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Dados dinamicos e eventos</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+
+        <input type="text"/>
+       <script>
+            //keydown tecla pressionada
+            //keyup tecla liberada
+            const ElINput =document.querySelector("input")
+            console.log(ElINput)
+            ElINput.addEventListener("keydown", (event)=>{
+                console.log("keydown",event.key, event.keyCode) //event retorna as informações da tecla, assim o codigo e a tecla pressionada
+
+                if(event.keyCode===13){//detecta o enter para enviar o texto
+                    alert(`tecla ENTER funcionando, ${ElINput.value}`) //capta o valor que foi entrado no campo
+                }
+            })
+
+            //ElINput.addEventListener("keyup", (event)=>{
+                //console.log("keyup")
+            //})
+       </script>
+    </body>
+</html>        

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+       
+        <title>Promises</title>
+        
+    </head>
+    <body>
+        <button> Executar</button>
+       
+        <script>
+            //promisse é um objeto usado para processamento assincrono. Uma promise representa um valor que pode está disponível agora, no futuro ou nunca
+            //estados:
+            //pending(inicial)
+            //fulfilled(realizada)
+            //rejected(rejeitada)
+
+            let count = 0 
+            function testPromise(){
+                console.log("sync started")
+               
+                const p1 = new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                   
+                        console.log("p1 finished")
+                        resolve(1)
+                    },1000) 
+                })
+
+                const p2 = new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                   
+                        console.log("p2 finished")
+                        resolve(2)
+                    },2000) 
+                })
+
+                const p3 = new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                   
+                        console.log("p3 finished")
+                        reject(3)
+                    },3000) 
+                })
+                //chamadas de promises 
+                //p1.then(()=>{
+                    //p2.then(()=>{
+                        //resultado final
+                    //})
+                //})
+                //chamada de todas as promises juntas, cada promise irá sair no seu tempo e no final é retornado o values
+                Promise.all([p1,p2,p3]).then((values)=>{
+                    console.log("promise values",values)
+                }).catch(() =>{
+                    console.error("promises error")
+                })
+                //assim o cascateamento fica automatizado e também permite capturar erro de alguma das promises
+               
+                console.log("sync finished")
+            }
+            const button = document.querySelector("button")
+            button.addEventListener("click",testPromise)
+
+            
+        </script>
+    </body>
+</html>
